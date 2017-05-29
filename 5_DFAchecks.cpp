@@ -2,8 +2,6 @@
 // Created by AK on 30/10/16.
 //
 
-#include "DFAchecks.h"
-
 //==========================================================
 
 void Sample1(int num, int num2) {
@@ -40,9 +38,8 @@ void Sample2(int flag) {
         case 1:
             c = Color::Blue;
             break;
-//        default:
-//            c = Color::Green;
-//            break;
+        default:
+            c = Color::Green;
     }
 
     switch (c) {
@@ -53,8 +50,6 @@ void Sample2(int flag) {
         case Color::Green:
             break;
         case Color::Yellow:
-            break;
-        default:
             break;
     }
 
@@ -78,17 +73,43 @@ void Sample3(States current) {
 
 //==========================================================
 
-enum SystemLevels {
-    SystemLevelBoot,
-    SystemLevelDown,
-    SystemLevelUp
+enum CollisionType {
+    None, Left, Right, Top, Bottom
 };
-const unsigned int sys_flags = SystemLevelUp | SystemLevelDown;
 
-void Sample4() {
-    if (sys_flags & SystemLevelBoot) {
-        //...
+
+class Ball {
+public:
+    int getSpeedX() { return 0; }
+    int getSpeedY() { return 0; }
+};
+
+bool Sample4(Ball& ball, CollisionType type) {
+    int mulX = 1, mulY = 1;
+
+    switch (type)
+    {
+        case Left:
+            if (ball.getSpeedX() < 0) mulX = -1;
+            break;
+        case Right:
+            if (ball.getSpeedX() > 0) mulX = -1;
+            break;
+        case Top:
+            if (ball.getSpeedY() < 0) mulY = -1;
+            break;
+        case Bottom:
+            if (ball.getSpeedY() > 0) mulY = -1;
+            break;
+        case None:break;
     }
 
-    //...
+    if (mulX == -1 && mulY == -1)
+    {
+        //do smth:...
+        return true;
+    } else
+    {
+        return false;
+    }
 }

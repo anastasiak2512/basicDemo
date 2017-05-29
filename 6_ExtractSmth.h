@@ -8,10 +8,11 @@
 
 class ExtractSmth {
 
-    float getXp() { return 0.5; }
-    float getZp() { return 0.5; }
+    float getZp(float d) { return 0.5; }
 
     void extractSample(int x, int z);
+
+    float getDouble(float xp) const;
 };
 
 

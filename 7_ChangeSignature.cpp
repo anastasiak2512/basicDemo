@@ -2,8 +2,6 @@
 // Created by AK on 30/10/16.
 //
 
-#include "ChangeSignature.h"
-
 typedef struct PersonData {
     int age;
     int id;
@@ -11,12 +9,12 @@ typedef struct PersonData {
 } PersonData;
 
 //Add another parameter
-void callPerson(PersonData& p1) {
+void callPerson(PersonData *p2) {
     //TODO:
 }
 
 void usage() {
     PersonData p = {64, 0, "Bjarne Stroustrup"};
 
-    callPerson(p);
+    callPerson(&p);
 }
