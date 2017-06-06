@@ -38,7 +38,7 @@ Particle particleArray[BASE_MASS];
 void ExtractSmth::extractSample(int x, int z)
 {
     //Inline / extract function
-    float xp = getDouble(xp);
+    float xp = xp * 100 + xp * xp;
     float zp = getZp(zp);
 
     //Extract const (1-xp)
@@ -69,7 +69,5 @@ void ExtractSmth::extractSample(int x, int z)
         );
     }
 }
-
-float ExtractSmth::getDouble(float xp) const { return xp * 100 + xp * xp; }
 
 #pragma clang diagnostic pop

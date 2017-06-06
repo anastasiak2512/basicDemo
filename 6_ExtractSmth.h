@@ -12,7 +12,6 @@ class ExtractSmth {
 
     void extractSample(int x, int z);
 
-    float getDouble(float xp) const;
 };
 
 
