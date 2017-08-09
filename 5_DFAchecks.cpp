@@ -4,29 +4,22 @@
 
 //==========================================================
 
-void Sample1(int num, int num2) {
-    int x, y;
+typedef enum class Color { Red, Blue, Green, Yellow };
 
-    if (num)
-        x = 2, y = 3;
+void do_shadow_color(int shadow) {
+    Color cl1, cl2;
+
+    if (shadow)
+        cl1 = Color::Red, cl2 = Color::Blue;
     else
-        x = 4, y = 5;
+        cl1 = Color::Green, cl2 = Color::Yellow;
 
-    if (num2) {
-        if (x == 2 || y == 5) {
-            //...
-        }
+    if (cl1 == Color::Red || cl2 == Color::Yellow) {
+
     }
 }
 
 //==========================================================
-
-typedef enum class Color {
-    Red,
-    Blue,
-    Green,
-    Yellow
-} color;
 
 void Sample2(int flag) {
     Color c;
