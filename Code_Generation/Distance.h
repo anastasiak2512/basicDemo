@@ -8,12 +8,9 @@
 
 class Distance {
 private:
-    int feet;
-    int inches;
+    int feet = 0;
+    int inches = 0;
 public:
-    Distance() : feet(0) , inches(0)
-    {}
-
     Distance(int feet , int inches) : feet(feet) , inches(inches)
     {}
 
@@ -21,7 +18,7 @@ public:
     {
         feet = -feet;
         inches = -inches;
-        return Distance(feet , inches);
+        return {feet, inches};
     }
 
     bool operator<(const Distance &d)

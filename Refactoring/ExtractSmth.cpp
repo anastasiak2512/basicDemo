@@ -2,7 +2,7 @@
 // Created by AK on 31/10/16.
 //
 
-#include "6_ExtractSmth.h"
+#include "ExtractSmth.h"
 
 
 #pragma clang diagnostic push

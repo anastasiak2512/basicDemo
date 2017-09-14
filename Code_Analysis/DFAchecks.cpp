@@ -4,7 +4,7 @@
 
 //==========================================================
 
-typedef enum class Color { Red, Blue, Green, Yellow };
+enum class Color { Red, Blue, Green, Yellow };
 
 void do_shadow_color(int shadow) {
     Color cl1, cl2;
