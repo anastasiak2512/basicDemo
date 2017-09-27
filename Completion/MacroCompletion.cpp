@@ -7,6 +7,12 @@
 CLASS_DEF(one)
 CLASS_DEF(two)
 
+#define X(a) a,
+enum E {
+#include "xmacro.txt"
+};
+#undef X
+
 void foo(int c) {
 //    class_one cl;
 //    cl.count_one;
