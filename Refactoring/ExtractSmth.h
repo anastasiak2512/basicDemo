@@ -8,7 +8,7 @@
 
 class ExtractSmth {
 
-    float getZp(float d) { return 0.5; }
+    float getZp(float d) { return 0.5f; }
 
     void extractSample(int x, int z);
 

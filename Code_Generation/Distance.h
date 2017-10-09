@@ -21,7 +21,7 @@ public:
         return {feet, inches};
     }
 
-    bool operator<(const Distance &d)
+    bool operator<(const Distance &d) const
     {
         if (feet < d.feet) {
             return true;
