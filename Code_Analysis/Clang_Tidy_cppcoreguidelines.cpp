@@ -1,24 +1,19 @@
-// To enable only Google checks in Clang-Tidy
+// To enable only C++ Core Guidelines checks in Clang-Tidy
 // go to Settings/Preferences | Editor | Inspections | C/C++ | Clang-Tidy
-// and provide: -*,google-* in options
+// and provide: -*,cppcoreguidelines-* in options
 
-void avoid_c_style_cast(char ch, double d, long long lng)
-{
-    int my_ch = (int)ch;
-    int my_d = (int)d;
-    int my_lng = (int)lng;
+void fill_pointer(int* arr, const int num) {
+    for(int i = 0; i < num; ++i) {
+        arr[i] = 0;
+    }
 }
 
-namespace my_namespace {
-    class My_Class {
-    public:
-        My_Class(int x) :x(x) {
+void fill_array(int ind) {
+    int arr[3] = {1,2,3};
+    arr[ind] = 0;
+}
 
-        }
-        My_Class* operator&() {
-            return this;
-        }
-    private:
-        int x;
-    };
+void cast_away_const(const int& magic_num)
+{
+    const_cast<int&>(magic_num) = 42;
 }

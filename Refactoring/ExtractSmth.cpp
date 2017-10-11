@@ -1,12 +1,10 @@
-//
-// Created by AK on 31/10/16.
-//
+// 1. Extract Function
+// 2. Inlines
+// 3. Extract parameter
+// 4. Extract variable
 
+#include <tkDecls.h>
 #include "ExtractSmth.h"
-
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wuninitialized"
 
 #define BASE_MASS 100
 #define EXTRA_MASS (BASE_MASS * 10)
@@ -37,37 +35,39 @@ Particle particleArray[BASE_MASS];
 
 void ExtractSmth::extractSample(int x, int z)
 {
-    //Inline / extract function
-    float xp = xp * 100 + xp * xp;
-    float zp = getZp(zp);
+    //Extract expression to a function
+    //Inline: xp
+    float xp = x * 100 + z * z;
+    //Inline: EXTRA_MASS (good for debug)
 
-    //Extract const (1-xp)
-    //Extract parameter: x * 2 + z
-    const auto delta = 1 - xp;
-    particleArray[x * 2 + z].setMass(BASE_MASS + EXTRA_MASS * delta * (1 - zp));
+    //Extract parameter: 0.5f
+    //Extract variable: x * 2 + z
+    particleArray[(x * 2 + z)].setMass(BASE_MASS + EXTRA_MASS * (1 - xp) * (1 - 0.5f));
     massDisplayPos.addScaledVector(
-            particleArray[x * 2 + z].getPosition(), delta * (1 - zp)
+            particleArray[(x * 2 + z)].getPosition(), (1 - xp) * (1 - 0.5f)
     );
 
     if (xp > 0) {
-        particleArray[x * 2 + z + 2].setMass(BASE_MASS + EXTRA_MASS * xp * (1 - zp));
+        particleArray[x * 2 + z + 2].setMass(BASE_MASS + EXTRA_MASS * xp * (1 - 0.5f));
         massDisplayPos.addScaledVector(
-                particleArray[x * 2 + z + 2].getPosition(), xp * (1 - zp)
+                particleArray[x * 2 + z + 2].getPosition(), xp * (1 - 0.5f)
         );
 
-        if (zp > 0) {
-            particleArray[x * 2 + z + 3].setMass(BASE_MASS + EXTRA_MASS * xp * zp);
+        if (0.5f > 0) {
+            particleArray[x * 2 + z + 3].setMass(BASE_MASS + EXTRA_MASS * xp * 0.5f);
             massDisplayPos.addScaledVector(
-                    particleArray[x * 2 + z + 3].getPosition(), xp * zp
+                    particleArray[x * 2 + z + 3].getPosition(), xp * 0.5f
             );
         }
     }
-    if (zp > 0) {
-        particleArray[x * 2 + z + 1].setMass(BASE_MASS + EXTRA_MASS * delta * zp);
+    if (0.5f > 0) {
+        particleArray[x * 2 + z + 1].setMass(BASE_MASS + EXTRA_MASS * (1 - xp) * 0.5f);
         massDisplayPos.addScaledVector(
-                particleArray[x * 2 + z + 1].getPosition(), delta * zp
+                particleArray[x * 2 + z + 1].getPosition(), (1 - xp) * 0.5f
         );
     }
 }
 
-#pragma clang diagnostic pop
+void ExtractSmth::callCheck() {
+    extractSample(5, 100);
+}

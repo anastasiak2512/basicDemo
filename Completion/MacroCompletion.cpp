@@ -1,5 +1,5 @@
 //
-// Created by AK on 30/10/16.
+// Check completion for the code declared via macros
 //
 
 #define CLASS_DEF(class_name) class class_##class_name { public: int count_##class_name; };
@@ -14,6 +14,8 @@ enum E {
 #undef X
 
 void foo(int c) {
+//    E::
+    
 //    class_one cl;
 //    cl.count_one;
 }

@@ -1,5 +1,5 @@
 //
-// Created by AK on 30/10/16.
+// Doxygen documentation preview and generation
 //
 
 #ifndef DEMOMORE_DOXYGENSAMPLE_H
@@ -7,7 +7,7 @@
 
 class DoxygenSample {
 public:
-    //generate
+    // generate
     static bool checkIntVal(int myVal) { return true; }
 
 

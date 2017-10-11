@@ -11,10 +11,10 @@ class Point
 private:
     int   x;
     int   y;
-    Color pc;
+    Color pc{Color::Black};
 
 public:
-    Point(int _x, int _y): x(_x), y(_y), pc(Color::Black) {}
+    Point(int _x, int _y): x(_x), y(_y) {}
     void move_point(int dx);
     void change_color(Color c);
 };
