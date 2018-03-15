@@ -3,7 +3,6 @@
 //- Extract parameter (Ctrl+Alt+P on Windows/Linux, Cmd+Alt+P on macOS)
 //- Extract variable (Ctrl+Alt+V on Windows/Linux, Cmd+Alt+V on macOS)
 
-#include <tkDecls.h>
 #include "ExtractSmth.h"
 
 #define BASE_MASS 100

@@ -1,6 +1,6 @@
-//
-// Created by AK on 20/05/17.
-//
+//Check the built-in code analysis checks.
+//Quick-fixes are available for many cases.
+//Uncomment the file.
 
 #include <string>
 
