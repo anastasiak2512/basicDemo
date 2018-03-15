@@ -9,6 +9,7 @@
 class ExtractSmth {
     void extractSample(int x, int z);
     void callCheck();
+
 };
 
 

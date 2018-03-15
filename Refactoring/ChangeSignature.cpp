@@ -1,5 +1,6 @@
-// 1. Add another Person Data parameter to the callPerson function.
-// 2. Swap two input parameters in the callPerson function.
+//Use Change Signature (Ctrl+F6 on Windows/Linux, Cmd+F6 on macOS) to:
+//- Add another Person Data parameter to the callPerson function.
+//- Swap two input parameters in the callPerson function.
 
 typedef struct PersonData {
     int age;
@@ -7,7 +8,6 @@ typedef struct PersonData {
     const char *name;
 } PersonData;
 
-//Add another parameter
 void callPerson(PersonData *p) {
     //TODO:
 }

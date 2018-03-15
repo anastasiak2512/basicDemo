@@ -1,6 +1,5 @@
-//
-// Created by AK on 11/10/2017.
-//
+//- Call Quick Doc (Ctrl+Q on Windows/Linux, F1 on macOS) for CLASS_DEF usage. See the macro replacement.
+//- Inline (Ctrl+Alt+N on Windows/Linux, ⌥⌘N) CLASS_DEF, one or all usages
 
 #define MAGIC 100
 #define CALL_DEF(val) int call() { return val; }
@@ -12,3 +11,5 @@
                               };
 
 CLASS_DEF(my)
+CLASS_DEF(his)
+CLASS_DEF(her)

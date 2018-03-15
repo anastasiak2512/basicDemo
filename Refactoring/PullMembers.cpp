@@ -12,7 +12,7 @@ enum class Sex {
 
 class Mammal {
 public:
-    virtual void makeSound() = 0;
+    virtual void makeLoudSound() = 0;
 };
 
 class Human : public Mammal {

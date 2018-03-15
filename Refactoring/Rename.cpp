@@ -30,7 +30,6 @@ public:
         return feet == d.feet && inches < d.inches;
     }
 
-    //Output Distance: feet and inches values to the output stream
     friend std::ostream &operator<<(std::ostream &os, const Distance &distance) {
         os << "feet: " << distance.feet << " inches: " << distance.inches;
         return os;

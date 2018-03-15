@@ -7,15 +7,17 @@
 CLASS_DEF(one)
 CLASS_DEF(two)
 
+//FIXME: ugly preprocessor code, reimplement
 #define X(a) a,
 enum E {
 #include "xmacro.txt"
 };
 #undef X
 
+//TODO: implement foo
 void foo(int c) {
-//    E::
+//    E::b;
     
-//    class_one cl;
+//    class_one cl{};
 //    cl.count_one;
 }

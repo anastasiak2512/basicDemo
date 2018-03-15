@@ -1,13 +1,13 @@
-//
-// Doxygen documentation preview and generation
-//
+//- Preview compound Doxygen comment
+//- Generate Doxygen documentation stub.
+//- Rename some parameter, check changes in Doxygen comment
 
 #ifndef DEMOMORE_DOXYGENSAMPLE_H
 #define DEMOMORE_DOXYGENSAMPLE_H
 
 class DoxygenSample {
 public:
-    // generate
+    // Generate
     static bool checkIntVal(int myVal) { return true; }
 
 

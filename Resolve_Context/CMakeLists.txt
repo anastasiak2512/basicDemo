@@ -1,0 +1,2 @@
+add_subdirectory(Flag_target)
+add_subdirectory(No_flag_target)
