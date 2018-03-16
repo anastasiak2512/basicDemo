@@ -1,3 +1,8 @@
+#- Check CMake Install
+#- Check CMake completion
+#- Check file references (Rename)
+#- Check live templates (boost, boost with libs)
+
 set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/Install CACHE PATH "install here" FORCE)
 
 add_executable(CMake_support main.cpp Foo.h)
