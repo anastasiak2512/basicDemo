@@ -32,7 +32,6 @@ CollisionType getCollisionWithBrick(const Ball& b, const QRectF& brick) {
 bool applyCollision(Ball& b, CollisionType type) {
     int mulX = 1, mulY = 1;
 
-    //FIXME: fix compiler warning
     switch (type) {
         case Left:
             if (b.getSpeed().x() < 0) mulX = -1;
@@ -46,10 +45,10 @@ bool applyCollision(Ball& b, CollisionType type) {
         case Bottom:
             if (b.getSpeed().y() > 0) mulY = -1;
             break;
+        case None:break;
     }
 
-    // FIXME: this function doesn't work for some reason
-    if (mulX == -1 && mulY == -1) {
+    if (mulX == -1 || mulY == -1) {
         b.setSpeed(QPointF(b.getSpeed().x() * mulX, b.getSpeed().y() * mulY));
         return true;
     }

@@ -29,8 +29,7 @@ private:
     }
 };
 
-GameWidget::GameWidget(QWidget *parent)
-        : QWidget(parent),
+GameWidget::GameWidget(QWidget *parent): QWidget(parent),
           canvas_(new CanvasWidget(this)) {
     canvas_->setFixedSize(WND_WIDTH, WND_HEIGHT);
 

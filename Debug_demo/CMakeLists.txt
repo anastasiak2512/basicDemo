@@ -1,3 +1,5 @@
+#Don't forget to add -DCMAKE_MODULE_PATH=<qt5 path>
+
 find_package(Qt5Widgets REQUIRED)
 
 add_library(arkanoidLib Ball.cpp Ball.h GameObject.cpp GameObject.h Brick.cpp Brick.h Collisions.cpp Collisions.h GameState.cpp GameState.h)
