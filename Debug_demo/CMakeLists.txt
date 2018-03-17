@@ -35,3 +35,5 @@ endif()
 add_subdirectory(3rdparty/googletest)
 add_executable(arkanoidTest test.cpp)
 target_link_libraries(arkanoidTest gtest_main arkanoidLib)
+
+add_executable(printers printers.cpp)
