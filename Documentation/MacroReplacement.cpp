@@ -2,14 +2,14 @@
 //- Inline (Ctrl+Alt+N on Windows/Linux, ⌥⌘N) CLASS_DEF, one or all usages
 
 #define MAGIC 100
-#define CALL_DEF(val) int call() { return val; }
+#define CALL_DEF(val, class_name) int call_##class_name() { return val; }
 
 #define CLASS_DEF(class_name) class class_##class_name { \
                               public: \
                                   int count_##class_name; \
-                                  CALL_DEF(MAGIC) \
+                                  CALL_DEF(MAGIC, class_name) \
                               };
 
-CLASS_DEF(my)
-CLASS_DEF(his)
-CLASS_DEF(her)
+CLASS_DEF(A)
+CLASS_DEF(B)
+CLASS_DEF(C)
