@@ -22,3 +22,20 @@ namespace my_namespace {
         int x;
     };
 }
+
+class Base
+{
+public:
+    virtual int someMethod(const int x, const int factor = 1) const
+    {
+        return 42 * x * x * factor;
+    }
+};
+class Derived : public Base
+{
+public:
+    int someMethod(const int x, const int factor = 0) const override
+    {
+        return x * x * factor;
+    }
+};

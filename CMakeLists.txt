@@ -1,7 +1,8 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.4)
 project(demoMore)
 
 set(CMAKE_CXX_STANDARD 17)
+#set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(SOURCE_FILES main.cpp)
 add_executable(demoMore ${SOURCE_FILES})
@@ -21,3 +22,4 @@ add_subdirectory(Resolve_Context)
 add_subdirectory(CMake_support)
 add_subdirectory(Debug_demo)
 add_subdirectory(Valgrind_memcheck)
+add_subdirectory(Sanitizers)
