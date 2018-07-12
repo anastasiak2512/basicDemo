@@ -94,7 +94,6 @@ bool Sample4(Ball& ball, CollisionType type) {
         case Bottom:
             if (ball.getSpeedY() > 0) mulY = -1;
             break;
-        case None:break;
     }
 
     if (mulX == -1 && mulY == -1)

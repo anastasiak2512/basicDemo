@@ -5,6 +5,7 @@ set(SOURCE_FILES CodeAnalysis.cpp
         Clang_Tidy_cppcoreguidelines.cpp
         cppcast_quickfixes.cpp
         GoToFail.cpp
-        Clang_Tidy_options.cpp)
+        Clang_Tidy_options.cpp
+        argument_selection_inspection.cpp)
 
 add_library(code_analysis ${SOURCE_FILES})
