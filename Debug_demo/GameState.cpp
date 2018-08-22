@@ -2,10 +2,13 @@
 
 #include "Collisions.h"
 
-GameState::GameState(int fieldWidth, int fieldHeight)
+GameState::GameState(int fieldWidth,
+                     int fieldHeight)
         : field_(0, 0, fieldWidth, fieldHeight),
-          ball_(QPointF(field_.width() / 2, field_.height() - 30), QPointF(200, -200)),
-          paddle_(QPointF(field_.width() / 2, field_.height() - 10), 60, 20),
+          ball_(QPointF(field_.width() / 2, field_.height() - 30),
+                  QPointF(200, -200)),
+          paddle_(QPointF(field_.width() / 2, field_.height() - 10),
+                  60, 20),
           score_(0) {
 
     int ROWS = 4, COLS = 5;

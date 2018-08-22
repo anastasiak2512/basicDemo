@@ -28,7 +28,7 @@ namespace Bond {
     struct Agent {
         double ohseven = .007;
 
-        auto f() {
+        auto seven() {
             return [this] {
                 return [*this] {
                     return ohseven;
