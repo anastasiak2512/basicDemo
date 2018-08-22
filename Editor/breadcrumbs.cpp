@@ -36,4 +36,4 @@ namespace Bond {
             }();
         }
     };
-}
+}  // namespace Bond

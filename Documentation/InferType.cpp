@@ -8,5 +8,4 @@ auto doOperation(T t, U u) -> decltype(t + u) {
 
 void fun_type() {
     auto op = doOperation(3.0, 0);
-    //...
 }
