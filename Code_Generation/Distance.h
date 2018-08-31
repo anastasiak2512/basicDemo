@@ -11,7 +11,7 @@ class Distance {
 private:
     int feet = 0;
     int inches = 0;
-    int diamention;
+    int dimension;
 public:
     Distance(int feet, int inches) : feet(feet), inches(inches) {}
 
