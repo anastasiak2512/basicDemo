@@ -11,7 +11,9 @@ class Distance {
 private:
     int feet = 0;
     int inches = 0;
+    int diamention;
 public:
+    Distance(int feet, int inches) : feet(feet), inches(inches) {}
 
     void some_cycle() {
         std::vector<int> var{1,2,3,4,5};
