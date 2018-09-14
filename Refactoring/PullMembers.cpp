@@ -10,12 +10,12 @@ enum class Sex {
     Female
 };
 
-class Mammal {
+class Maml {
 public:
     virtual void makeLoudSound() = 0;
 };
 
-class Human : public Mammal {
+class Person : public Maml {
 private:
     float weight{};
     Sex mf;
