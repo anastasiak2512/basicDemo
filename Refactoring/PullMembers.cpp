@@ -5,35 +5,42 @@
 #include <string>
 #include <iostream>
 
-enum class Sex {
-    Male,
-    Female
-};
+namespace Milk {
 
-class Maml {
-public:
-    virtual void makeLoudSound() = 0;
-};
+    enum class MilkType {
+        NoMilk,
+        SomeMilk,
+        TonsMilk
+    };
 
-class Person : public Maml {
-private:
-    float weight{};
-    Sex mf;
-    std::string name;
-public:
-    void sayHello() {
-        std::cout << "Hello, " + name + "\n";
-    }
+    class Maml {
+    public:
+        virtual void makeLoudSound() = 0;
+    };
 
-    float some_magic_num(float weight) {
-        return 0;
-    }
-
-    float produceMilk() {
-        if (mf == Sex::Male) {
-            return 0;
-        } else {
-            return some_magic_num(weight);
+    class Person : public Maml {
+    protected:
+        float weight{};
+        MilkType mf;
+        std::string name;
+    public:
+        void sayHello() {
+            std::cout << "Hello, " + name + "\n";
         }
-    }
-};
+
+        float some_magic_num(float weight) {
+            return 0;
+        }
+
+        float produceMilk() {
+            switch (mf) {
+                case MilkType::NoMilk:
+                    return 0;
+                case MilkType::SomeMilk:
+                    return some_magic_num(weight);
+                case MilkType::TonsMilk:
+                    return some_magic_num(2 * weight);
+            }
+        }
+    };
+}
