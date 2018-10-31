@@ -3,7 +3,7 @@
 
 #include <QPointF>
 #include <QRectF>
-struct QPainter;
+class QPainter;
 
 struct GameObject {
 

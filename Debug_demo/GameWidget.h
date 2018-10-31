@@ -5,7 +5,7 @@
 
 struct GameState;
 struct CanvasWidget;
-struct QLabel;
+class QLabel;
 
 //TODO: Document class
 struct GameWidget : public QWidget {
