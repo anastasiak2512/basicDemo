@@ -1,0 +1,1 @@
+add_executable(remote_run sys_info_printer.cpp config_switch.cpp)

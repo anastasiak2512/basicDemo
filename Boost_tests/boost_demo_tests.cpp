@@ -4,15 +4,16 @@
 
 #define MY_ONE 1
 
+
 BOOST_AUTO_TEST_SUITE(demo_suite)
 
-    BOOST_AUTO_TEST_CASE(test_one)
+    BOOST_AUTO_TEST_CASE(test_equal_1)
     {
         BOOST_CHECK_EQUAL(MY_ONE, 1);
     }
 
     //Debug test with Valgrind Memcheck
-    BOOST_AUTO_TEST_CASE(test_two)
+    BOOST_AUTO_TEST_CASE(test_equal_word)
     {
         char *name = new char[4];
         name[1] = 't';
