@@ -7,7 +7,12 @@
 #include <vector>
 #include <ostream>
 
-class Distance {
+class Base_Distance {
+public:
+    virtual void self_calculation() = 0;
+};
+
+class Distance : public Base_Distance {
 private:
     int feet = 0;
     int inches = 0;
