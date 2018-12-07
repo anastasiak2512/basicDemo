@@ -7,22 +7,22 @@
 
 #include <ostream>
 
-class Distance {
+class CustomDistance {
 private:
     int feet = 0;
     int inches = 0;
 public:
-    Distance(int feet , int inches) : feet(feet) , inches(inches)
+    CustomDistance(int feet, int inches) : feet(feet) , inches(inches)
     {}
 
-    Distance operator-()
+    CustomDistance operator-()
     {
         feet = -feet;
         inches = -inches;
         return {feet, inches};
     }
 
-    bool operator<(const Distance &d) const
+    bool operator<(const CustomDistance &d) const
     {
         if (feet < d.feet) {
             return true;
@@ -30,7 +30,8 @@ public:
         return feet == d.feet && inches < d.inches;
     }
 
-    friend std::ostream &operator<<(std::ostream &os, const Distance &distance) {
+    //Print: feet and inches
+    friend std::ostream &operator<<(std::ostream &os, const CustomDistance &distance) {
         os << "feet: " << distance.feet << " inches: " << distance.inches;
         return os;
     }
