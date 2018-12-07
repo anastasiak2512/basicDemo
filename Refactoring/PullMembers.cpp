@@ -43,4 +43,4 @@ namespace Milk {
             }
         }
     };
-}
+}  // namespace Milk
