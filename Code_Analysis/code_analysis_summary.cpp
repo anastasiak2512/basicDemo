@@ -25,10 +25,15 @@ namespace analysis_sum {
 
 //==========================================================
 
-    void checkParam(std::string name) {
+    struct MyClass {
+        int var;
         std::string name;
+    };
 
-        name.append("Test");
+    void checkParam(MyClass *cl) {
+        MyClass *cl;
+
+        //...
     }
 
 //==========================================================
