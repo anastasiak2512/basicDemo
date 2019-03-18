@@ -25,13 +25,13 @@ namespace analysis_sum {
 
 //==========================================================
 
-    struct MyClass {
+    struct VarCl {
         int var;
         std::string name;
     };
 
-    void checkParam(MyClass *cl) {
-        MyClass *cl;
+    void checkParam(VarCl *cl) {
+        VarCl *cl;
 
         //...
     }
