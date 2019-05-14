@@ -7,8 +7,8 @@
 #include <vector>
 
 void doSmth() {
-    std::vector<colorBall> v;
+    std::vector<soccerBall> v;
     for (auto &&item : v) {
-        item.colorBallCall();
+        item.play();
     }
 }

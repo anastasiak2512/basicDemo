@@ -17,6 +17,6 @@ void PrintInjected() {
                  "</body>\n"
                  "</html>" << std::endl;
 
-    const char *main_file = "file_\\d\\d.cc{2}";
+    const char *main_file = "file_\\d\\d.ac{2}";
 }
 

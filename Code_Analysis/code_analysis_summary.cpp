@@ -19,6 +19,50 @@ namespace analysis_sum {
 
 //==========================================================
 
+    struct Data
+    {
+        void activity();
+        static int num;
+    };
+
+    Data CreateData() { return Data(); }
+
+    void ActivateData()
+    {
+        CreateData().activity();
+    }
+
+    int Data::num = 1;
+
+    void Data::activity()
+    {
+        num = 42;
+    }
+
+//==========================================================
+
+    template<typename T>
+    void Foo(T, typename T::inner_type * = nullptr);
+
+    template<typename T>
+    decltype(T().Method()) Bar(T);
+
+    struct X {
+        using inner_type = void;
+        static void Method() {}
+    };
+
+    struct Y {};
+
+    void CallFooBar(X x, Y y) {
+        Foo(x);
+        Foo(y);
+        Bar(x);
+        Bar(y);
+    }
+
+//==========================================================
+
     void wrongFormatSpecifiers(int x, char *y) {
         printf("Input param: %s, %d", x, y);
     }

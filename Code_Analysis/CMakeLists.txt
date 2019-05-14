@@ -6,6 +6,6 @@ set(SOURCE_FILES CodeAnalysis.cpp
         cppcast_quickfixes.cpp
         GoToFail.cpp
         Clang_Tidy_options.cpp
-        argument_selection_inspection.cpp code_analysis_summary.cpp)
+        argument_selection_inspection.cpp code_analysis_summary.cpp naming_inspections.cpp)
 
 add_library(code_analysis ${SOURCE_FILES})
