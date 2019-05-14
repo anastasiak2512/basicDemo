@@ -4,8 +4,8 @@ elseif()
     message("Non-CLion is running!")
 endif()
 
-set(SOURCE_FILES Operator_usages_highlight.cpp
+set(SOURCE_FILES operator_usages_highlight.cpp
         breadcrumbs.cpp control_statements_folding.cpp
-        unwrap.cpp ide_macro.cpp)
+        unwrap.cpp ide_macro.cpp injected_languages.cpp)
 
 add_library(editor_lib ${SOURCE_FILES})
