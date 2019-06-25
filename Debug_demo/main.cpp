@@ -1,4 +1,3 @@
-
 #include <QApplication>
 #include <QWidget>
 #include "GameWidget.h"
