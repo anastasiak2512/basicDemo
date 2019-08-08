@@ -207,4 +207,13 @@ namespace analysis_sum {
             return x * x * factor;
         }
     };
+
+    class Check {
+    private:
+        std::vector<int> vec;
+    public:
+        bool empty(int num) const {
+            return num % 2;
+        }
+    };
 }  // namespace analysis_sum
