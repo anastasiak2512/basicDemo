@@ -11,7 +11,7 @@ public:
     static bool checkIntVal(int myVal) { return true; }
 
 
-    /// @brief The date of nth x-day in month.
+    /// @brief The date of nth x-day in month. <a href="https://www.jetbrains.com/help/clion/creating-and-viewing-doxygen-documentation.html">Sample doc</a>
     /// @return The date.
     int CheckNDay(int n, ///< [in] The number of the x-day.
                           int x, ///< [in] x = 0 means Sunday, x = 1 means Monday, and so on.
