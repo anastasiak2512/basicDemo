@@ -7,7 +7,8 @@
 #include <algorithm>
 #include <string>
 
-void generate_permutation(std::string input)
+#pragma region Region_Test
+[[maybe_unused]] void generatePermutation(std::string input)
 {
     int count = 0;
     std::sort(input.begin(), input.end());
@@ -17,3 +18,4 @@ void generate_permutation(std::string input)
         std::cout << input << '\n';
     } while(std::next_permutation(input.begin(), input.end()));
 }
+#pragma endregion RegionTest
