@@ -2,17 +2,21 @@
 //- Add another Person Data parameter to the callPerson function.
 //- Swap two input parameters in the callPerson function.
 
+#define DEFAULT_RATE 100
+
 typedef struct PersonData {
-    int age;
-    int id;
+    int int_idx;
+    int rate_idx;
     const char *name;
 } PersonData;
 
 void callPerson(PersonData *p) {
-    //TODO:
+    p->rate_idx = p->int_idx * 100;
+
+    //TODO: implement actual call
 }
 
 void usage() {
-    PersonData p = {64, 0, "Bjarne Stroustrup"};
+    PersonData p = {1, 100, "Bjarne Stroustrup"};
     callPerson(&p);
 }
