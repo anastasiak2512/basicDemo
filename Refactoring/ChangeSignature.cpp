@@ -12,7 +12,7 @@ typedef struct PersonData {
     const char *name;
 } PersonData;
 
-void callPerson(PersonData *p, int rate_cf) {
+void callPerson(PersonData *p) {
     int extra_cf = 200;
     p->rate_idx = p->int_idx * 100 * extra_cf;
 
@@ -21,5 +21,5 @@ void callPerson(PersonData *p, int rate_cf) {
 
 void usage() {
     PersonData p = {1, 100, "Bjarne Stroustrup"};
-    callPerson(&p, DEFAULT_RATE);
+    callPerson(&p);
 }
