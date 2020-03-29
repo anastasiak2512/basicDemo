@@ -15,11 +15,11 @@ typedef struct PersonData {
 void callPerson(PersonData *p) {
     int extra_cf = 200;
     p->rate_idx = p->int_idx * 100 * extra_cf;
-
     //TODO: implement actual call
 }
 
 void usage() {
-    PersonData p = {1, 100, "Bjarne Stroustrup"};
+    PersonData p = {1, 100,
+                    "Bjarne Stroustrup"};
     callPerson(&p);
 }
