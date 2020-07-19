@@ -26,7 +26,7 @@ public:
 void printThisInteger(int) {}
 
 int main() {
-    Employee emp { {.name="John", .surname="Wick", .age=40}, .salary=5000};
+    Employee emp { {.name="John", .surname="Wick", .age=40}, 5000};
 
     std::cout << emp.name << " " << emp.surname << ": age "
               << emp.age << ", " << emp.salary << "\n";
