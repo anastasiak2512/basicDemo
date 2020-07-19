@@ -1,13 +1,14 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.17)
 project(demoMore)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 #set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(SOURCE_FILES main.cpp)
 add_executable(demoMore ${SOURCE_FILES})
 
 add_subdirectory(Code_Analysis)
+
 add_subdirectory(Code_Generation)
 add_subdirectory(Completion)
 add_subdirectory(Documentation)

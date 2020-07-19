@@ -11,6 +11,7 @@ class QLabel;
 struct GameWidget : public QWidget {
     GameWidget(QWidget* parent);
     ~GameWidget();
+    static void check_id() {}
 
 protected:
     void keyPressEvent(QKeyEvent* event) override;

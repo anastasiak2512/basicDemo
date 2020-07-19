@@ -23,9 +23,9 @@ void loop_convert(const std::vector<int>& vec) {
     }
 }
 
-class MyClass {
+class myClass {
 public:
-    MyClass(const std::string &Copied,
+    myClass(const std::string &Copied,
             const std::string &ReadOnly)
             : Copied(Copied), ReadOnly(ReadOnly) {}
 
@@ -34,6 +34,6 @@ private:
     const std::string &ReadOnly;
 };
 
-typedef void (MyClass::* MyPtrType)() const;
+typedef void (myClass::* MyPtrType)() const;
 
 

@@ -93,3 +93,26 @@ void CallFooBar(X x, Y y) {
 }
 
 //==========================================================
+//Unused type aliases
+
+using myGlobalIntType = int;
+
+void foo() {
+    using myLocalIntType = int;
+}
+
+//==========================================================
+//Simplify statement
+
+template<int N>
+struct Smpl {
+    static constexpr bool value = false;
+};
+template<>
+struct Smpl<0> {
+    static constexpr bool value = true;
+};
+template <int N>
+void foo() {
+    static constexpr bool value = Smpl<N>::value && Smpl<0>::value;
+}

@@ -30,10 +30,6 @@ public:
     }
 };
 
-std::ostream& operator<<(std::ostream& out, const Fraction& f)
-{
-    return out << f.num() << '/' << f.den() ;
-}
 
 bool operator==(const Fraction& lhs, const Fraction& rhs)
 {
@@ -50,8 +46,11 @@ Fraction operator*(Fraction lhs, const Fraction& rhs)
     return lhs *= rhs;
 }
 
-void fraction_sample()
-{
+std::ostream& operator<<(std::ostream& out, const Fraction& f) {
+    return out << f.num() << '/' << f.den();
+}
+
+void fraction_sample() {
     Fraction f1(3, 8), f2(1, 2);
 
     std::cout << f1 << " * " << f2 << " = " << f1 * f2 << '\n';

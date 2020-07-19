@@ -18,12 +18,13 @@ private:
     int inches = 0;
 //    int dimension;
 public:
+    Distance(int feet, int inches) : feet(feet), inches(inches) {}
 
     void some_cycle() {
         std::vector<int> var{1,2,3,4,5};
 
         //Generate with Iter live template here
-
+        
         //Create a function from usage, update ref-qualifier
         //some_function(var);
     }

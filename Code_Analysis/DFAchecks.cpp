@@ -105,3 +105,87 @@ bool Sample4(Ball& ball, CollisionType type) {
         return false;
     }
 }
+
+int check() {
+    while(true) {}
+    return 0;
+}
+
+//==========================================================
+
+//Loop conditions
+
+void test_loop() {
+
+    for (int i = 0; i < 10;) {
+        if (i > 5)
+            break;
+    }
+
+    {
+        int x = 10;
+        while (x > 0) {
+            int &ref = {x};
+            --ref;
+        }
+    }
+
+    {
+        int x = 10;
+        int *p = &x;
+        ([p, x]() {
+            while (x > 0)
+                *p = 0;
+        })();
+    }
+}
+
+//==========================================================
+//Dangling pointer
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+class linked_list
+{
+private:
+    node *head,*tail;
+public:
+    linked_list()
+    {
+        head = nullptr;
+        tail = nullptr;
+    }
+
+    void process();
+    void add_node(int n);
+};
+
+void linked_list::add_node(int n)
+{
+    node *tmp = new node;
+    tmp->data = n;
+    tmp->next = nullptr;
+
+    if(head == nullptr)
+    {
+        head = tmp;
+        tail = tmp;
+    }
+    else
+    {
+        tail->next = tmp;
+        tail = tail->next;
+    }
+}
+
+void linked_list::process() {
+    for (node *pt = head; pt != nullptr; pt = pt->next) {
+        delete pt;
+    }
+}
+
+//==========================================================

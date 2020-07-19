@@ -3,8 +3,8 @@
 #include <string>
 
 typedef struct PersonData {
-    int age;
-    int id;
+    int Age;
+    int rate_idx;
     int doc_num;
     float weight;
     float height;
