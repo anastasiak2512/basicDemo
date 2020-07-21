@@ -1,6 +1,13 @@
 #include <iostream>
 #include <vector>
 
+// Completion for C++20 keywords
+const char *g() { return "dynamic initialization"; }
+constexpr const char *f(bool p) {
+    return p ? "constant initializer" : g();
+}
+constinit const char *con = f(true);
+
 // Explicit(bool)
 #define LEVEL_NUM 100
 
