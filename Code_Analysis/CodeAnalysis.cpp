@@ -142,5 +142,7 @@ struct S3 {
     MyComplexConcepts<T, U> auto func() { return 1; }
 };
 
-S3<int> s3;
-auto x = s3.func<char>();
+void test2() {
+    S3<int> s3;
+    auto x = s3.func<char>();
+}
