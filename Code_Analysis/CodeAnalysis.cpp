@@ -116,3 +116,31 @@ template <int N>
 void foo() {
     static constexpr bool value = Smpl<N>::value && Smpl<0>::value;
 }
+//==========================================================
+//Constrain a function result
+
+template<typename T>
+concept MyConcept = requires(T t){ static_cast<bool>(t); };
+
+template<class T>
+struct Strc {
+    template<class U>
+    MyConcept auto func() { return 2020; }
+};
+
+void test() {
+    Strc<int> strc;
+    auto x = strc.func<char>();
+}
+
+template<class T, class U, class V>
+concept MyComplexConcepts = true;
+
+template<class T>
+struct S3 {
+    template<class U>
+    MyComplexConcepts<T, U> auto func() { return 1; }
+};
+
+S3<int> s3;
+auto x = s3.func<char>();
