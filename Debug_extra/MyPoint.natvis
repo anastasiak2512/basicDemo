@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+  <Type Name="MyPoint">
+    <DisplayString Condition="x == 0 &amp;&amp; y == 0">Zero</DisplayString>
+    <DisplayString>x: {x} y: {y}</DisplayString>
+    <Expand>
+      <Item Name="[x]">x</Item>
+      <Item Name="[y]">y</Item>
+      <Item Name="[square]">x*y</Item>
+      <Item Name="[comb]">x*x + y*y</Item>
+    </Expand>
+  </Type>
+</AutoVisualizer>
