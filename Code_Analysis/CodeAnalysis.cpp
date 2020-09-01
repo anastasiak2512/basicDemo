@@ -50,28 +50,6 @@ int * escapeScope() {
 
 //==========================================================
 
-struct Data
-{
-    void activity();
-    static int num;
-};
-
-Data CreateData() { return Data(); }
-
-void ActivateData()
-{
-    CreateData().activity();
-}
-
-int Data::num = 1;
-
-void Data::activity()
-{
-    num = 42;
-}
-
-//==========================================================
-
 template<typename T>
 void Foo(T, typename T::inner_type * = nullptr);
 
@@ -90,15 +68,6 @@ void CallFooBar(X x, Y y) {
     Foo(y);
     Bar(x);
     Bar(y);
-}
-
-//==========================================================
-//Unused type aliases
-
-using myGlobalIntType = int;
-
-void foo() {
-    using myLocalIntType = int;
 }
 
 //==========================================================
