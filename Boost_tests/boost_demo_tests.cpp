@@ -25,3 +25,8 @@ BOOST_AUTO_TEST_SUITE(demo_suite)
     }
 
 BOOST_AUTO_TEST_SUITE_END()
+
+// Quick doc macro replacement - practical sample
+// https://www.boost.org/doc/libs/1_41_0/libs/preprocessor/doc/ref/repeat.html
+#define DECL(z, n, text) text ## n = n;
+BOOST_PP_REPEAT(5, DECL, int x)

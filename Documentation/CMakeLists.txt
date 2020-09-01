@@ -1,4 +1,4 @@
-set(SOURCE_FILES InferType.cpp
-        DoxygenSample.h MacroReplacement.cpp TODO_task_reminders.cpp)
+set(SOURCE_FILES TypeDebug.cpp
+        DoxygenSample.h MacroDebug.cpp TODO_task_reminders.cpp OverloadsDebug.cpp)
 
 add_library(documentation ${SOURCE_FILES})
