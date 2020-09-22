@@ -18,6 +18,8 @@ add_subdirectory(Refactoring)
 add_subdirectory(Catch_tests)
 add_subdirectory(Boost_tests)
 add_subdirectory(Doctest_tests)
+enable_testing()
+add_subdirectory(CTest_tests)
 
 add_subdirectory(precompiled_header)
 add_subdirectory(Navigation)
