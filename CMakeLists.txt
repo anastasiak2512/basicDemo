@@ -27,7 +27,7 @@ add_subdirectory(Resolve_Context)
 
 add_subdirectory(CMake_support)
 add_subdirectory(CUDA_support)
-
+set(Qt5Widgets_DIR /usr/local/Cellar/qt/5.15.0/lib/cmake/Qt5Widgets/)
 add_subdirectory(Debug_demo)
 add_subdirectory(Debug_extra)
 
