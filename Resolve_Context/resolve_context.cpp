@@ -11,19 +11,17 @@ namespace MYNAMESPACE {
 }
 
 void check_context() {
-    int count;
-
     MYNAMESPACE::MyClass cl;
 
 #ifdef SpecialFlag
 #if SpecialFlag
     std::cout << "Running with Special Flag" << std::endl;
-    count = 1000;
-    test::MyClass cl2;
+    int count = 1000;
+    TEST::MyClass ifcl;
 #else
     std::cout << "Running without Special Flag" << std::endl;
-    count = 1;
-    test2::MyClass cl2;
+    int count = 1;
+    TEST2::MyClass ifcl;
 #endif
 #endif
 
