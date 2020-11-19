@@ -29,7 +29,8 @@ CollisionType getCollisionWithBrick(const Ball& b, const QRectF& brick) {
     }
 }
 
-bool applyCollision(Ball& b, CollisionType type) {
+bool applyCollision(Ball& b,
+                    CollisionType type) {
     int mulX = 1, mulY = 1;
 
     switch (type) {
