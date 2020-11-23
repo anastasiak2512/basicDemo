@@ -115,3 +115,21 @@ void test2() {
     S3<int> s3;
     auto x = s3.func<char>();
 }
+
+//========================================================
+// MISRA checks: https://confluence.jetbrains.com/display/CLION/MISRA+checks+supported+in+CLion
+
+#define SHIFT_8 8
+
+unsigned char func(unsigned char num) {
+    return num;
+}
+
+void discarded(unsigned char counter) {
+    unsigned char foo = 1;
+    foo <<= SHIFT_8;
+
+    func(counter * foo);
+}
+
+
