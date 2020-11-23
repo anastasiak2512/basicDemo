@@ -60,3 +60,10 @@ struct S3 {
 S3<int> s3;
 auto x = s3.func<char>(); // here
 
+//Completion snippets
+
+template<typename T>
+concept CastConcept = requires(T t) {
+    static_cast<bool>(t);
+};
+
