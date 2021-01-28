@@ -1,5 +1,5 @@
-//Call Quick Doc (Ctrl+Q on Windows/Linux, F1 on macOS) on op variable to see its type.
-//Change the call arguments, check that the type is updated.
+//Call Quick Doc (Ctrl+Q on Windows/Linux, F1 on macOS) on foo variable to see its type.
+//Find Usages on the first foo declaration to get the different between text and context searches.
 #include <iostream>
 
 // Sample 1 - highlight overloads at caret
