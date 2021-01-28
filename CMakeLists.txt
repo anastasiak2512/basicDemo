@@ -24,6 +24,7 @@ add_subdirectory(CTest_tests)
 add_subdirectory(precompiled_header)
 add_subdirectory(Navigation)
 add_subdirectory(Editor)
+add_subdirectory(ElevatorPitch)
 add_subdirectory(StartNewDemo)
 add_subdirectory(Resolve_Context)
 
