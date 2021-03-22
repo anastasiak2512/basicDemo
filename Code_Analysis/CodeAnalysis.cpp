@@ -150,4 +150,22 @@ void discarded(unsigned char counter) {
     func(counter * foo);
 }
 
+struct S {
+    signed int a : 1;
+    signed int : 1;
+    signed int : 0;
+    signed int b : 2;
+    signed int : 2;
+};
+
+void process_ptr(int32_t *int_ptr) {}
+
+void operate() {
+    process_ptr(0);
+}
+
+class OpClass {
+public:
+    OpClass *operator&() {};
+};
 
