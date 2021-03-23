@@ -3,6 +3,8 @@
 //
 
 //==========================================================
+// Local DFA
+//==========================================================
 
 enum class Color { Red, Blue, Green, Yellow };
 
@@ -189,3 +191,111 @@ void linked_list::process() {
 }
 
 //==========================================================
+// Global DFA
+//==========================================================
+
+// Unused value
+
+void use(int n) {;}
+
+class UseVal {
+    int field;
+
+    void operate() {
+        field = 1001;
+    }
+
+    void doOperation() {
+        use(field);
+        operate();
+    }
+
+public:
+    void callOperation() {
+        doOperation();
+    }
+};
+//==========================================================
+
+//Null dereferencing
+
+class Deref {
+    int* foo() {
+        return nullptr;
+    }
+
+public:
+    void bar() {
+        int* buffer = foo();
+        buffer[0] = 0;
+    }
+};
+
+//==========================================================
+
+// Unreachable call sites
+
+bool always_false() {
+    return false;
+}
+
+static void myOperation() {}
+
+
+void handleCondOperation() {
+    if (always_false())
+        myOperation();
+}
+
+//==========================================================
+
+// Dangling pointer
+
+static void delete_ptr(int* ptr) {
+    delete ptr;
+}
+
+int handle_pointer() {
+    int* int_ptr = new int;
+
+    delete_ptr(int_ptr);
+    *int_ptr = 1;
+
+    return 0;
+}
+//==========================================================
+
+// Unreachable code
+
+enum State {
+    Processing,
+    Idle,
+    Stop
+};
+
+void log_msg(const char *message) {}
+
+State nextState;
+
+static void setState(State state) {
+    nextState = state;
+}
+
+static void Consume(State state) {
+    switch (state) {
+        case Processing: log_msg("Processing");
+            break;
+        case Idle: log_msg("Idle");
+            break;
+        case Stop: log_msg("Stop!");
+            break;
+    }
+}
+
+void Process() {
+    Consume(Processing);
+    Consume(Idle);
+}
+
+//==========================================================
+
