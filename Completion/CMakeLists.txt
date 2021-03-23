@@ -1,5 +1,5 @@
 set(SOURCE_FILES SmartCompletion.cpp
-        MacroCompletion.cpp)
+        MacroCompletion.cpp postfix.cpp)
 
 add_library(code_completion ${SOURCE_FILES})
 
