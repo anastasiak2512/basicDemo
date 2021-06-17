@@ -1,3 +1,4 @@
+// Turn on Refactoring modal dialog: Settings/Preferences | Editor | Code Editing -> Refactorings | Specify refactoring options | In the modal dialogs
 // Rename: feet -> dfeet
 // Update both: code and non-code usages, which includes:
 // - member name

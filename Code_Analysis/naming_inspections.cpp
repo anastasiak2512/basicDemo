@@ -11,7 +11,7 @@ public:
 
     void printcard() {
         std::cout << "data: " << data << "\n";
-        std::cout << "id: " << id << "\n";
+        std::cout << "type idt: " << id << "\n";
     }
 
     void process(const int num) {

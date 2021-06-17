@@ -31,6 +31,8 @@ private:
 
 GameWidget::GameWidget(QWidget *parent): QWidget(parent),
           canvas_(new CanvasWidget(this)) {
+    setFocusPolicy(Qt::StrongFocus);
+
     canvas_->setFixedSize(WND_WIDTH, WND_HEIGHT);
 
     auto mainLayout = new QVBoxLayout;
