@@ -1,0 +1,97 @@
+{
+  "version": 2,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default-ninja",
+      "displayName": "Default Ninja",
+      "description": "Default build using Ninja generator",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/default-ninja-gen",
+      "cacheVariables": {
+        "FIRST_CACHE_VARIABLE": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "SECOND_CACHE_VARIABLE": "ON",
+        "MY_VAR": "name"
+      },
+      "environment": {
+        "MY_ENVIRONMENT_VARIABLE": "Test",
+        "PATH": "$env{HOME}/ninja/bin:$penv{PATH}"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Default"
+        }
+      }
+    },
+    {
+      "name": "ninja-multi",
+      "inherits": "default-ninja",
+      "displayName": "Ninja Multi-Config",
+      "description": "Default build using Ninja Multi-Config generator",
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceDir}/build/ninja-multi"
+    },
+    {
+      "name": "default-xcode",
+      "displayName": "Default Xcode",
+      "description": "Default build using Xcode generator",
+      "generator": "Xcode",
+      "binaryDir": "${sourceDir}/build/default-xcode",
+      "cacheVariables": {
+        "FIRST_CACHE_VARIABLE": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "SECOND_CACHE_VARIABLE": "ON"
+      },
+      "environment": {
+        "MY_ENVIRONMENT_VARIABLE": "Test",
+        "PATH": "$env{HOME}/ninja/bin:$penv{PATH}"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Remote Linux"
+        }
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default-ninja",
+      "configurePreset": "default-ninja"
+    },
+    {
+      "name": "ninja-multi",
+      "configurePreset": "ninja-multi"
+    },
+    {
+      "name": "default-xcode",
+      "configurePreset": "default-xcode"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "default-ninja",
+      "configurePreset": "default-ninja",
+      "output": {
+        "outputOnFailure": true
+      },
+      "execution": {
+        "noTestsAction": "error",
+        "stopOnFailure": true
+      }
+    }
+  ],
+  "vendor": {
+    "example.com/ExampleIDE/1.0": {
+      "autoFormat": false
+    }
+  }
+}
