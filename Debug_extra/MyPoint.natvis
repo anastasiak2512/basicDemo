@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
-  <Type Name="MyPoint">
+  <Type Name="MyPoint" Inheritable="false">
     <DisplayString Condition="x == 0 &amp;&amp; y == 0">Zero</DisplayString>
     <DisplayString>x: {x} y: {y}</DisplayString>
     <Expand>
