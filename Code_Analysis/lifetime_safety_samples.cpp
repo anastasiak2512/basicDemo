@@ -67,12 +67,14 @@ int &sample7() {
     return i;
 }
 
-const char *sample8() {
+
+const char *sample_string_view() {
     auto string = std::string("text");
     auto view = std::string_view(string);
     auto ptr = view.begin();
     return ptr;
 }
+
 
 //Sample 9
 struct [[gsl::Owner(int)]] MyIntOwner {
