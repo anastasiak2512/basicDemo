@@ -10,6 +10,7 @@ set(SOURCE_FILES
         argument_selection_inspection.cpp
         code_analysis_summary.cpp
         naming_inspections.cpp
+        lifetime_safety_samples.cpp
         )
 
 add_library(code_analysis ${SOURCE_FILES})
