@@ -57,7 +57,7 @@
       },
       "vendor": {
         "jetbrains.com/clion": {
-          "toolchain": "Remote Linux"
+          "toolchain": "Remote Host"
         }
       }
     }
