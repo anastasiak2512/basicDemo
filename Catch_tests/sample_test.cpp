@@ -11,7 +11,7 @@ TEST_CASE( "Life, the universe and everything", "[theAnswer]" ) {
     }
 }
 
-TEST_CASE( "Another big question", "[anotherAnswer]" ) {
+TEST_CASE( "Another big question", "[theAnswer]" ) {
     SECTION("In base 10") {
         CHECK(answer<float> == 48);
     }
