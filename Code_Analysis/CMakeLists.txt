@@ -11,6 +11,7 @@ set(SOURCE_FILES
         code_analysis_summary.cpp
         naming_inspections.cpp
         lifetime_safety_samples.cpp
+        MISRA_inspections.cpp
         )
 
 add_library(code_analysis ${SOURCE_FILES})
