@@ -9,7 +9,7 @@ std::function<int(int)> F(int count)
     return [](int m) { return 0; };
 }
 
-//=====================
+//Go to type navigation via Ctrl/Cmd + Click
 
 class Foo {
 
