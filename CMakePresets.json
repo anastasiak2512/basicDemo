@@ -2,7 +2,7 @@
   "version": 2,
   "cmakeMinimumRequired": {
     "major": 3,
-    "minor": 20,
+    "minor": 21,
     "patch": 0
   },
   "configurePresets": [
@@ -12,6 +12,7 @@
       "description": "Default build using Ninja generator",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/default-ninja-gen",
+      "installDir": "${sourceDir}/install/default-ninja-install",
       "cacheVariables": {
         "FIRST_CACHE_VARIABLE": {
           "type": "BOOL",
@@ -39,11 +40,37 @@
       "binaryDir": "${sourceDir}/build/ninja-multi"
     },
     {
-      "name": "default-xcode",
-      "displayName": "Default Xcode",
-      "description": "Default build using Xcode generator",
+      "name": "windows-only",
+      "inherits": "default",
+      "displayName": "Windows-only configuration",
+      "description": "This build is only available on Windows",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    },
+    {
+      "name": "base-xcode",
+      "displayName": "baseXcode",
+      "generator": "Ninja",
+      "description": "Base preset for other Xcode configurations",
+      "cacheVariables": {
+        "BASE_CACHE_VARIABLE": "${hostSystemName}"
+      }
+    },
+    {
+      "name": "remote-xcode",
+      "displayName": "Remote Xcode",
+      "description": "Remote build using Xcode generator",
+      "inherits": "base-xcode",
       "generator": "Xcode",
-      "binaryDir": "${sourceDir}/build/default-xcode",
+      "binaryDir": "${sourceDir}/build/remote-xcode",
+      "condition": {
+        "type": "notEquals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      },
       "cacheVariables": {
         "FIRST_CACHE_VARIABLE": {
           "type": "BOOL",
@@ -60,7 +87,36 @@
           "toolchain": "Remote Host"
         }
       }
+    },
+    {
+      "name": "local-xcode",
+      "displayName": "Default Xcode",
+      "description": "Default build using Xcode generator",
+      "binaryDir": "${sourceDir}/build/local-xcode",
+      "inherits": "base-xcode",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      },
+      "cacheVariables": {
+        "FIRST_CACHE_VARIABLE": {
+          "type": "BOOL",
+          "value": "OFF"
+        },
+        "SECOND_CACHE_VARIABLE": "ON"
+      },
+      "environment": {
+        "MY_ENVIRONMENT_VARIABLE": "Test",
+        "PATH": "$env{HOME}/ninja/bin:$penv{PATH}"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Default"
+        }
+      }
     }
+
   ],
   "buildPresets": [
     {
@@ -72,8 +128,12 @@
       "configurePreset": "ninja-multi"
     },
     {
-      "name": "default-xcode",
-      "configurePreset": "default-xcode"
+      "name": "remote-xcode",
+      "configurePreset": "remote-xcode"
+    },
+    {
+      "name": "local-xcode",
+      "configurePreset": "local-xcode"
     }
   ],
   "testPresets": [
