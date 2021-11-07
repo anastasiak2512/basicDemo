@@ -3,6 +3,9 @@
 // note that clang-tidy is built one and calngd via clang-tidy is enabled
 // MISRA checks: https://confluence.jetbrains.com/display/CLION/MISRA+checks+supported+in+CLion
 
+#include <cstdint>
+
+
 template<typename T> void f(T);
 template<> void f<uint16_t>(uint16_t);
 template <> void f<int16_t>(int16_t);
@@ -52,4 +55,29 @@ class OpClass {
 public:
     OpClass *operator&() {};
 };
+
+class MySingleCLass {
+public:
+    MySingleCLass(int32_t a) {}
+};
+
+int inc_func() { return 100; }
+
+void check_loop() {
+    for (int x = 0; x < 10; x += inc_func()) {}
+
+    int y = 0;
+    for (int x = 0; x < y; x = y++) {}
+
+
+}
+
+bool modify(int32_t *pX) {
+    *pX++;
+    return *pX < 10;
+}
+
+void check_modify_loop() {
+    for (int x = 0; modify(&x);) {}
+}
 
