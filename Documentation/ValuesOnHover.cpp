@@ -3,6 +3,7 @@
 
 #include <random>
 #include <memory>
+#include <stdint.h>
 
 enum class Color {
     Red,
@@ -41,7 +42,6 @@ struct Foo { // Classes/Structs: Shows size (in bytes) and whether they are copy
 };
 
 struct Str {
-    int value;
-    char chr;
-    int other; // Class members: Shows size (in bytes), offset and padding (if non-zero):
+    uint32_t value;
+    uint8_t other; // Class members: Shows size (in bytes), offset and padding (if non-zero):
 };
