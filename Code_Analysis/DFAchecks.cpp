@@ -299,3 +299,19 @@ void Process() {
 
 //==========================================================
 
+// Array index out of bounds
+
+#include <array>
+
+void aioob() {
+    int buffer[100];
+
+    for (int i = 0; i <= 100; i++)
+        buffer[i] = 0; // buffer overflow when i is equal to 100
+
+
+    std::array<int, 3> a = {1, 2, 3};
+    a[a.size()] = 4; // a overflow when index is equal to a.size()
+}
+
+//==========================================================
