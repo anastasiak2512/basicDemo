@@ -1,3 +1,7 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCUnusedGlobalDeclarationInspection"
+#pragma ide diagnostic ignored "clion-misra-cpp2008-0-1-7"
+#pragma ide diagnostic ignored "cppcoreguidelines-avoid-magic-numbers"
 #include <iostream>
 #include <functional>
 
@@ -27,5 +31,27 @@ int main() {
 
     const auto tuple = std::make_tuple(1, 'a', 2.3);
     const auto& [i, c, d] = tuple;
+
+    auto wstr = std::to_wstring(2137LL);
 }
 
+template<class T>
+void foo(typename T::iterator Iter) {
+    auto X = Iter;
+}
+
+#include <deque>
+
+struct Point {
+    Point(int x, int y) {}
+};
+
+void deg_handle() {
+    std::deque<Point> deq;
+
+    deq.emplace_front(1, 2);
+    deq.emplace_back(1, 2);
+    deq.emplace(deq.begin(), 1, 2);
+}
+
+#pragma clang diagnostic pop

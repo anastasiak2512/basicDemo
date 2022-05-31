@@ -1,6 +1,7 @@
 //Filter the completion options by type on the left.
 
 #include <string>
+#include <map>
 
 typedef struct PersonData {
     int Age;
@@ -15,4 +16,6 @@ typedef struct PersonData {
 
 void checkIdPersonData(PersonData& p) {
 //    std::string s = p.forename;
+
+//    std::map<int, std::string> * pMap = new
 }

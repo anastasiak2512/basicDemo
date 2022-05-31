@@ -119,22 +119,6 @@
 
   ],
   "buildPresets": [
-    {
-      "name": "default-ninja",
-      "configurePreset": "default-ninja"
-    },
-    {
-      "name": "ninja-multi",
-      "configurePreset": "ninja-multi"
-    },
-    {
-      "name": "remote-xcode",
-      "configurePreset": "remote-xcode"
-    },
-    {
-      "name": "local-xcode",
-      "configurePreset": "local-xcode"
-    }
   ],
   "testPresets": [
     {
