@@ -1,6 +1,6 @@
 #Don't forget to add -DCMAKE_MODULE_PATH=<qt5 path>
 
-set(QT_VERSION 5)
+set(QT_VERSION 6)
 
 find_package(Qt${QT_VERSION}Widgets REQUIRED)
 

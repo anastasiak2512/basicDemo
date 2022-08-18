@@ -35,6 +35,7 @@ add_subdirectory(CUDA_support)
 
 add_subdirectory(Debug_demo)
 add_subdirectory(Debug_extra)
+add_subdirectory(Debug_extra/FreeRTOS_demo)
 
 add_subdirectory(Valgrind_memcheck)
 add_subdirectory(Sanitizers)
