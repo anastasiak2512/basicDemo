@@ -8,6 +8,7 @@ function(add_module name)
             -std=gnu++20
             -x c++
             -fmodules
+#            --target=x86_64-apple-macosx12.6.0
             -c
             ${CMAKE_CURRENT_SOURCE_DIR}/${ARGN}
             -Xclang -emit-module-interface
@@ -20,12 +21,14 @@ add_compile_options(-fmodules)
 add_compile_options(-fbuiltin-module-map)
 add_compile_options(-fimplicit-module-maps)
 add_compile_options(-fprebuilt-module-path=${PREBUILT_MODULE_PATH})
+add_compile_options(--target=x86_64-apple-macosx12.6.0)
 
 add_module(AdvancedMath AdvancedMath.cppm)
+add_module(Talk language.cppm)
 add_executable(Modules
         main.cpp
         AdvancedMath.cppm
-        language.ixx
+        language.cppm
         )
-add_dependencies(Modules AdvancedMath.pcm)
+add_dependencies(Modules AdvancedMath.pcm Talk.pcm)
 
