@@ -9,4 +9,8 @@ set(SOURCE_FILES operator_usages_highlight.cpp
         unwrap.cpp ide_macro.cpp injected_languages.cpp
         cpp20.cpp concepts.cpp hints.cpp)
 
+if(CMAKE_CXX_STANDARD GREATER_EQUAL 20)
+    set(SOURCE_FILES ${SOURCE_FILES} croutines.cpp)
+endif()
+
 add_library(editor_lib ${SOURCE_FILES})
