@@ -1,8 +1,66 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "clion-misra-cpp2008-5-3-1"
+#pragma ide diagnostic ignored "modernize-use-auto"
+#pragma ide diagnostic ignored "clion-misra-cpp2008-5-2-4"
 //Check the built-in code analysis checks.
 //Quick-fixes are available for many cases.
 //Uncomment the file.
 
 #include <string>
+
+#include <mutex>
+
+class NeedsLock {
+    std::lock_guard<std::mutex> _lock;
+
+public:
+    explicit NeedsLock(std::mutex& mtx) : _lock(mtx) {}
+};
+
+int main() {
+    std::mutex mtx;
+    std::unique_lock lock(mtx);
+    NeedsLock needs_lock(mtx);
+}
+
+void narrow_cast(int64_t p_num) {
+    int32_t num = (int32_t) p_num;
+    if (num == p_num) {
+        //...
+    }
+}
+
+void EmitVBR64(uint64_t Val, unsigned NumBits) {
+    assert(NumBits <= 32 && "Too many bits to emit!");
+    if ((uint32_t) Val == Val) {
+        //...
+    }
+}
+
+int myIntSize(const char *const str) {
+    if (*str == '\0') {
+        return -1;  // Empty str
+    }
+
+    errno = 0;
+
+    char *end;
+    const long value = strtol(str, &end, 10);
+
+    if (*end != '\0') {
+        return -1;  // Isn't a number
+    } else if (errno == ERANGE) {
+        return -1;  // Overflow
+    } else if (value == ((long) ((int8_t) value))) {
+        return 1;
+    } else if (value == ((long) ((int16_t) value))) {
+        return 2;
+    } else if (value == ((long) ((int32_t) value))) {
+        return 4;
+    } else {
+        return -1;  // More than 32 bit
+    }
+}
 
 //==========================================================
 
@@ -116,3 +174,5 @@ void test2() {
     auto x = s3.func<char>();
 }
 
+
+#pragma clang diagnostic pop

@@ -45,3 +45,8 @@ struct Str {
     uint32_t value;
     uint8_t other; // Class members: Shows size (in bytes), offset and padding (if non-zero):
 };
+
+struct S {
+    unsigned b1: 2;
+    bool flag;
+};

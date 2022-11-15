@@ -7,7 +7,7 @@ struct GameState;
 struct CanvasWidget;
 class QLabel;
 
-//TODO: Document class
+//Main Game widget that handled the keyboard events
 struct GameWidget : public QWidget {
     GameWidget(QWidget* parent);
     ~GameWidget();
