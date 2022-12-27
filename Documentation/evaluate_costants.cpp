@@ -49,10 +49,12 @@ constexpr auto magic = (sizeof(MySpecialType) * MAGIC_NUM);
 #include <numeric>
 
 template <class T, std::size_t N>
-consteval auto sumArray(const std::array<T, N> &arr) {
-    return std::accumulate(
-            arr.begin(), arr.end(), 0,
-            [](const auto acc, const auto &elem) { return acc + elem; });
+constexpr T sumArray(const std::array<T, N> &arr) {
+    T sum = 0;
+    for (const auto &elem : arr) {
+        sum += elem;
+    }
+    return sum;
 }
 
 int calc_sum() {
