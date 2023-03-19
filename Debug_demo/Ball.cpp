@@ -1,5 +1,3 @@
-
-
 #include <QPainter>
 #include "Ball.h"
 
