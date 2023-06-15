@@ -41,7 +41,7 @@
     },
     {
       "name": "windows-only",
-      "inherits": "default",
+      "inherits": "default-ninja",
       "displayName": "Windows-only configuration",
       "description": "This build is only available on Windows",
       "condition": {

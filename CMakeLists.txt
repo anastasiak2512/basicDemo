@@ -18,6 +18,7 @@ add_subdirectory(Param_Info)
 add_subdirectory(Refactoring)
 
 add_subdirectory(Catch_tests)
+add_subdirectory(Catch2_devel)
 add_subdirectory(Boost_tests)
 add_subdirectory(Doctest_tests)
 enable_testing()
