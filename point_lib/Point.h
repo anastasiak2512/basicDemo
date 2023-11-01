@@ -1,3 +1,6 @@
+#ifndef POINTLIB_POINT_H
+#define POINTLIB_POINT_H
+
 enum class Color {
     Red,
     Green,
@@ -27,3 +30,4 @@ void Point::change_color(Color c) {
     this->pc = c;
 }
 
+#endif // POINTLIB_POINT_H
