@@ -1,9 +1,35 @@
 #pragma once
 
-
+#include <optional>
 #include <QPointF>
 #include <QRectF>
 class QPainter;
+
+struct Motion {
+    explicit Motion(const QPointF& value) : value_(value) {}
+
+    const QPointF& getValue() const {
+        return value_;
+    }
+
+    void setValue(const QPointF& value) {
+        value_ = value;
+    }
+
+    void setDelta(const std::optional<QPointF>& delta){
+        delta_ = delta;
+    }
+
+    void calculate(int msec) {
+        if (delta_) {
+            value_ += *delta_ * (msec / 1000.);
+        }
+    }
+
+private:
+    QPointF value_;
+    std::optional<QPointF> delta_;
+};
 
 struct GameObject {
 
@@ -12,6 +38,10 @@ struct GameObject {
     const QPointF& getPos() const;
 
     const QPointF& getSpeed() const;
+
+    Motion& getSpeedMotion() {
+        return speed_;
+    }
 
     void setPos(const QPointF& pos);
 
@@ -24,7 +54,7 @@ struct GameObject {
     virtual QRectF aabb() const = 0;
 
 private:
-    QPointF pos_;
-    QPointF speed_;
+    Motion pos_;
+    Motion speed_;
 };
 
