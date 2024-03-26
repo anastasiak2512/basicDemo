@@ -50,7 +50,11 @@ bool applyCollision(Ball& b,
     }
 
     if (mulX == -1 || mulY == -1) {
-        b.setSpeed(QPointF(b.getSpeed().x() * mulX, b.getSpeed().y() * mulY));
+        QPointF newSpeed(b.getSpeed().x() * mulX, b.getSpeed().y() * mulY);
+        b.setSpeed(newSpeed);
+
+        b.getSpeedMotion().setDelta(QPointF(-0.1 * newSpeed.x(), -0.1 * newSpeed.y()));
+
         return true;
     }
     else {
